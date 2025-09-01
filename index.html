@@ -3,26 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hola Fullstack 2</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
-      color: white;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    }
-  </style>
+  <title>Registro - Tienda Guau&Miau</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎉 Hola Fullstack 2 está funcionando 🚀</h1>
+  <div class="container">
+    <h1>Registro de Usuario</h1>
+    <form id="registroForm">
+      <!-- Nombre completo -->
+      <label>Nombre completo:
+        <input type="text" id="nombre" maxlength="50" required>
+      </label>
+      <small class="error" id="errorNombre"></small>
+
+      <!-- Correo -->
+      <label>Correo electrónico (@duoc.cl):
+        <input type="email" id="correo" required>
+      </label>
+      <small class="error" id="errorCorreo"></small>
+
+      <!-- Contraseña -->
+      <label>Contraseña:
+        <input type="password" id="password" required>
+      </label>
+      <small class="error" id="errorPassword"></small>
+
+      <!-- Confirmar contraseña -->
+      <label>Confirmar contraseña:
+        <input type="password" id="confirmPassword" required>
+      </label>
+      <small class="error" id="errorConfirmPassword"></small>
+
+      <!-- Teléfono -->
+      <label>Teléfono (opcional):
+        <input type="tel" id="telefono" placeholder="Ej: 987654321">
+      </label>
+      <small class="error" id="errorTelefono"></small>
+
+      <!-- Mascotas -->
+      <h2>Mascotas</h2>
+      <div id="mascotasContainer">
+        <div class="mascota">
+          <label>Tipo de mascota:
+            <select class="tipoMascota" required>
+              <option value="">Seleccione...</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+              <option value="Ave">Ave</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+          <label>Nombre de mascota:
+            <input type="text" class="nombreMascota" maxlength="50" required>
+          </label>
+        </div>
+      </div>
+      <button type="button" id="addMascota">+ Añadir otra mascota</button>
+
+      <!-- Botón registrar -->
+      <button type="submit" class="btn">Registrar</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
